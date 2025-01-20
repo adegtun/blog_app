@@ -29,7 +29,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       final response = await supabaseClient.auth
           .signUp(password: password, email: email, data: {'name': name});
       if (response.user == null) {
-        throw ServerException('USer not found!');
+        throw ServerException('User not found!');
       }
       return response.user!.id;
     } catch (e) {
